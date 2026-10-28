@@ -174,3 +174,34 @@
 * **Paths Passing Through Waypoint $(x_1, y_1)$ to Destination $(a,b)$:**
   $$\text{Paths via Waypoint} = \binom{x_1 + y_1}{x_1} \times \binom{(a - x_1) + (b - y_1)}{a - x_1}$$
   * *Verbal Description:* Multiply the number of grid paths from origin $(0,0)$ to waypoint $(x_1, y_1)$ by the number of grid paths from $(x_1, y_1)$ to final destination $(a,b)$.
+
+---
+
+## Day 5: Mutually Exclusive Events & Addition Rules
+
+### 1. Mutually Exclusive (Disjoint) Events
+* **Intersection Condition:**
+  $$A \cap B = \varnothing \implies P(A \cap B) = 0$$
+  * *Verbal Description:* Two events are mutually exclusive if they share no outcomes in common, meaning they cannot occur simultaneously and their joint probability is zero.
+* **Special Addition Rule (Disjoint Events):**
+  $$P(A \cup B) = P(A) + P(B)$$
+  * *Verbal Description:* If two events cannot overlap, the probability that at least one occurs is simply the sum of their individual probabilities.
+* **Finite Additivity ($n$ Disjoint Events):**
+  $$P(A_1 \cup A_2 \cup \dots \cup A_n) = \sum_{i=1}^{n} P(A_i)$$
+  * *Verbal Description:* For any finite collection of mutually exclusive events, the probability that at least one occurs is the sum of all individual event probabilities.
+
+### 2. General Addition Rule (Two Events)
+* **Two-Event General Addition Formula:**
+  $$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+  * *Verbal Description:* The probability that at least one of two overlapping events occurs is the sum of their individual probabilities minus the double-counted joint intersection probability.
+* **Rearranged Form for Intersection:**
+  $$P(A \cap B) = P(A) + P(B) - P(A \cup B)$$
+  * *Verbal Description:* The probability of two events occurring together equals the sum of their individual probabilities minus the probability of their union.
+
+### 3. Inclusion-Exclusion Principle (Three Events)
+* **Three-Event Union Formula:**
+  $$P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(A \cap B) - P(A \cap C) - P(B \cap C) + P(A \cap B \cap C)$$
+  * *Verbal Description:* The probability that at least one of three events occurs equals the sum of individual probabilities, minus the three pairwise intersections to fix double-counting, plus the triple intersection to restore the subtracted center region.
+* **Sum of Pairwise Intersections:**
+  $$P(A \cap B) + P(A \cap C) + P(B \cap C) = P(A) + P(B) + P(C) - P(A \cup B \cup C) + P(A \cap B \cap C)$$
+  * *Verbal Description:* Expresses the total sum of pairwise joint probabilities using individual probabilities, the overall union probability, and the triple intersection probability.
