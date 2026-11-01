@@ -1,7 +1,5 @@
 # Actuarial Exam P Master Formula Chart
 
----
-
 ## Day 1: Sample Spaces, Set Operations, & Event Algebra
 
 ### 1. Fundamental Set Operations
@@ -115,7 +113,7 @@
   * **Two-Event Case:**
     $$P(A \cap B) \ge P(A) + P(B) - 1 \quad \text{or} \quad P(A \cap B) \ge 1 - P(A^c) - P(B^c)$$
     * *Verbal Description:* The simultaneous occurrence of two events is at least 1 minus the sum of their individual complements' probabilities.
-  * **Three-Event Case ($n = 3$):**
+  * **Three-Event Case (**$n = 3$**):**
     $$P(A \cap B \cap C) \ge P(A) + P(B) + P(C) - 2$$
     * *Verbal Description:* Lower bound for the simultaneous occurrence of three events, obtained by subtracting 2 from the sum of their probabilities.
   * **General $n$-Event Form:**
@@ -291,7 +289,7 @@
 
 ### 3. Extension to $n \ge 3$ Events: Pairwise vs. Mutual Independence
 
-* **Mutual Independence for Three Events ($A, B, C$):**
+* **Mutual Independence for Three Events (**$A, B, C$**):**
   Requires all 4 conditions to hold simultaneously:
   1. **Pairwise Independence (3 conditions):**
      $$P(A \cap B) = P(A)P(B)$$
@@ -303,8 +301,45 @@
 
 * **Mutual Independence for $n$ Events:**
   Requires $2^n - n - 1$ product equations to hold for all sub-collections of events:
-  $$P\left( \bigcap_{j \in J} A_j \right) = \prod_{j \in J} P(A_j) \quad \text{for any subset } J \subseteq \{1, 2, \dots, n\} \text{ with } |J| \ge 2$$
+  $$P\left( \bigcap_{j \in J} A_j \right) = \prod_{j \in J} P(A_j) \quad \text{for any subset } J \subseteq \{1, 2, \dots, n\} \text{ with } \vert{}J\vert{} \ge 2$$
   * *Verbal Description:* $n$ events are mutually independent if the joint probability of any subset of 2 or more events equals the product of their individual probabilities.
 
-* **Exam Warning (Pairwise vs. Mutual):**
-  * Pairwise independence **does NOT imply** mutual independence. On Exam P, unless specified as pairwise, the term "independent" always means **mutually independent**.
+---
+
+## Day 7: Multiplication Rules & Multi-Step Probability Calculations
+
+### 1. General Multiplication Rule
+
+* **General Multiplication Rule (Two Dependent Events):**
+  $$P(A \cap B) = P(A) \cdot P(B \mid A) \quad \text{or} \quad P(A \cap B) = P(B) \cdot P(A \mid B)$$
+  * *Verbal Description:* The probability that two sequential or dependent events both occur equals the probability of the first event multiplied by the conditional probability of the second event given that the first event has occurred.
+
+* **Independent Events Special Case:**
+  $$P(A \cap B) = P(A) \cdot P(B)$$
+  * *Verbal Description:* When events are independent, $P(B \mid A) = P(B)$, simplifying the conditional multiplication rule to a standard product of individual probabilities.
+
+### 2. The Chain Rule for $n$ Sequential Events
+
+* **General Chain Rule ($n$ Events):**
+  $$P(A_1 \cap A_2 \cap \dots \cap A_n) = P(A_1) \cdot P(A_2 \mid A_1) \cdot P(A_3 \mid A_1 \cap A_2) \cdots P(A_n \mid A_1 \cap A_2 \cap \dots \cap A_{n-1})$$
+  * *Verbal Description:* The joint probability that a sequence of $n$ dependent events all occur equals the probability of the first event, multiplied by the conditional probability of each subsequent event given that all preceding events in the sequence have occurred.
+
+### 3. Sampling With vs. Without Replacement
+
+* **Sampling With Replacement (Independent Draws):**
+  $$P(A_1 \cap A_2 \cap \dots \cap A_k) = [P(A)]^k$$
+  * *Verbal Description:* Draws are independent because items are returned to the pool prior to the next draw, keeping probabilities constant across every stage.
+
+* **Sampling Without Replacement (Dependent Draws / Sequential Chain Rule):**
+  $$P(A_1 \cap A_2 \cap \dots \cap A_k) = \frac{n(A)}{N} \times \frac{n(A) - 1}{N - 1} \times \dots \times \frac{n(A) - k + 1}{N - k + 1}$$
+  * *Verbal Description:* Draws are dependent because items are removed without replacement, decreasing both the target item count and total pool size by 1 after each successful draw.
+
+### 4. Multi-Step Probability Pathways (Law of Total Probability Decomposition)
+
+* **Pathway Addition Rule for Overall Event $E$:**
+  $$P(E) = P(\text{Path 1}) + P(\text{Path 2}) + \dots + P(\text{Path } k) = \sum_{i=1}^{k} P(\text{Path } i)$$
+  * *Verbal Description:* If a multi-step process can result in event $E$ through $k$ mutually exclusive sequential pathways, the total probability $P(E)$ equals the sum of the probabilities of each individual path.
+
+* **Expanded Pathway Representation:**
+  $$P(E) = \sum_{i=1}^{k} P(A_i \cap E) = \sum_{i=1}^{k} P(A_i) \cdot P(E \mid A_i)$$
+  * *Verbal Description:* Each pathway probability is calculated using the Multiplication Rule ($P(A_i) \cdot P(E \mid A_i)$) across stages and summed across all disjoint pathways.
