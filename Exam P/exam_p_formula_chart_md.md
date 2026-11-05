@@ -1,5 +1,7 @@
 # Actuarial Exam P Master Formula Chart
 
+---
+
 ## Day 1: Sample Spaces, Set Operations, & Event Algebra
 
 ### 1. Fundamental Set Operations
@@ -105,6 +107,7 @@
     $$P(A \cap B) \ge P(A) + P(B) - 1$$
     *(Note: $P(A \cap B) = P(A) + P(B) - P(A \cup B)$ when $P(A \cup B) = 1$)*
     * *Verbal Description:* The smallest possible intersection probability occurs when the union spans the entire sample space ($P(A \cup B) = 1$).
+
   * **Maximum Possible Intersection:**
     $$P(A \cap B) \le \min(P(A), P(B))$$
     * *Verbal Description:* The maximum intersection probability is restricted by the smaller of the two individual event probabilities.
@@ -113,9 +116,11 @@
   * **Two-Event Case:**
     $$P(A \cap B) \ge P(A) + P(B) - 1 \quad \text{or} \quad P(A \cap B) \ge 1 - P(A^c) - P(B^c)$$
     * *Verbal Description:* The simultaneous occurrence of two events is at least 1 minus the sum of their individual complements' probabilities.
-  * **Three-Event Case (**$n = 3$**):**
+
+  * **Three-Event Case ($n = 3$):**
     $$P(A \cap B \cap C) \ge P(A) + P(B) + P(C) - 2$$
     * *Verbal Description:* Lower bound for the simultaneous occurrence of three events, obtained by subtracting 2 from the sum of their probabilities.
+
   * **General $n$-Event Form:**
     $$P(A_1 \cap A_2 \cap \dots \cap A_n) \ge \sum_{i=1}^{n} P(A_i) - (n - 1)$$
     $$P(A_1 \cap A_2 \cap \dots \cap A_n) \ge 1 - \sum_{i=1}^{n} P(A_i^c)$$
@@ -283,13 +288,14 @@
   * **Two Events:**
     $$P(A \cup B) = 1 - P(A^c \cap B^c) = 1 - P(A^c)P(B^c)$$
     * *Verbal Description:* The probability that at least one of two independent events occurs equals 1 minus the product of their complement probabilities.
+
   * **General $n$ Independent Events:**
     $$P(\text{At least one event occurs}) = 1 - \prod_{i=1}^{n} P(A_i^c) = 1 - \prod_{i=1}^{n} \left(1 - P(A_i)\right)$$
     * *Verbal Description:* The probability that at least one of $n$ independent events occurs equals 1 minus the product of all individual non-occurrence probabilities.
 
 ### 3. Extension to $n \ge 3$ Events: Pairwise vs. Mutual Independence
 
-* **Mutual Independence for Three Events (**$A, B, C$**):**
+* **Mutual Independence for Three Events ($A, B, C$):**
   Requires all 4 conditions to hold simultaneously:
   1. **Pairwise Independence (3 conditions):**
      $$P(A \cap B) = P(A)P(B)$$
@@ -343,3 +349,40 @@
 * **Expanded Pathway Representation:**
   $$P(E) = \sum_{i=1}^{k} P(A_i \cap E) = \sum_{i=1}^{k} P(A_i) \cdot P(E \mid A_i)$$
   * *Verbal Description:* Each pathway probability is calculated using the Multiplication Rule ($P(A_i) \cdot P(E \mid A_i)$) across stages and summed across all disjoint pathways.
+
+---
+
+## Day 8: Conditional Probability & Restricted Sample Spaces
+
+### 1. Definition of Conditional Probability
+
+* **Conditional Probability Formula:**
+  $$P(A \mid B) = \frac{P(A \cap B)}{P(B)} \quad \text{for } P(B) > 0$$
+  * *Verbal Description:* The conditional probability of event $A$ given that event $B$ has occurred equals the joint probability of both $A$ and $B$ divided by the probability of the conditioning event $B$.
+
+* **Reduced Sample Space Formula (Equally Likely Outcomes):**
+  $$P(A \mid B) = \frac{N(A \cap B)}{N(B)}$$
+  * *Verbal Description:* In a sample space of equally likely outcomes, the conditional probability of $A$ given $B$ is the number of outcomes in the intersection of $A$ and $B$ divided by the total count of outcomes in the restricted sample space $B$.
+
+### 2. Rearranged Forms & Key Conditional Properties
+
+* **Joint Probability via Conditional Probability:**
+  $$P(A \cap B) = P(B) \cdot P(A \mid B) = P(A) \cdot P(B \mid A)$$
+  * *Verbal Description:* The joint probability of $A$ and $B$ can be calculated by multiplying the probability of the given event by the conditional probability of the target event given the first.
+
+* **Conditional Complement Rule:**
+  $$P(A^c \mid B) = 1 - P(A \mid B)$$
+  * *Verbal Description:* Given that event $B$ has occurred, the conditional probability that event $A$ does not occur equals 1 minus the conditional probability that event $A$ occurs.
+
+* **Conditioning Under Independence:**
+  $$P(A \mid B) = P(A) \quad \text{and} \quad P(B \mid A) = P(B) \quad (\text{for } P(A) > 0, \, P(B) > 0)$$
+  * *Verbal Description:* If events $A$ and $B$ are independent, knowing that event $B$ occurred provides no information about event $A$, so the conditional probability equals the unconditional probability.
+
+* **Conditional Set Difference Rule:**
+  $$P(A \cap B^c) = P(A) - P(A \cap B)$$
+  $$P(H \cap A^c) = P(H) - P(A \cap H)$$
+  * *Verbal Description:* The probability of a target event occurring without another event equals the total probability of the target event minus their joint intersection probability.
+
+* **General Addition Rule Under Conditioning:**
+  $$P(A_1 \cup A_2 \mid B) = P(A_1 \mid B) + P(A_2 \mid B) - P(A_1 \cap A_2 \mid B)$$
+  * *Verbal Description:* All standard probability rules and axioms, including the general addition rule, hold within any restricted sample space $B$.
