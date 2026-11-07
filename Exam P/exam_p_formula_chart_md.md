@@ -6,20 +6,22 @@
 
 ### 1. Fundamental Set Operations
 
-* **Union (**$A \cup B$**):** Event $A$ occurs, OR event $B$ occurs, OR both occur.
+* **Union ($A \cup B$):** Event $A$ occurs, OR event $B$ occurs, OR both occur.
   * *Verbal Description:* The collection of all outcomes that belong to event $A$, event $B$, or both.
 
-* **Intersection (**$A \cap B$**):** Event $A$ AND event $B$ occur simultaneously.
+* **Intersection ($A \cap B$):** Event $A$ AND event $B$ occur simultaneously.
   * *Verbal Description:* The collection of outcomes shared in common by both event $A$ and event $B$.
 
-* **Complement (**$A^c$ **or** $A'$**):** Event $A$ does NOT occur.
+* **Complement ($A^c$ or $A'$):** Event $A$ does NOT occur.
   * *Verbal Description:* All outcomes in the sample space that lie outside of event $A$.
 
-* **Set Difference (**$A \setminus B = A \cap B^c$**):** Event $A$ occurs, BUT event $B$ does NOT occur.
+* **Set Difference ($A \setminus B = A \cap B^c$):** Event $A$ occurs, BUT event $B$ does NOT occur.
   * *Verbal Description:* The collection of outcomes that belong exclusively to event $A$ and not to event $B$.
 
-* **Null / Empty Event (**$\varnothing$**):** An impossible event containing no outcomes.
+* **Null / Empty Event ($\varnothing$):** An impossible event containing no outcomes.
   * *Verbal Description:* The set with zero outcomes, representing an event that cannot occur.
+
+---
 
 ### 2. De Morgan's Laws
 
@@ -28,6 +30,8 @@
 
 * **Complement of Intersection:** $(A \cap B)^c = A^c \cup B^c$
   * *Verbal Description:* The event that $A$ and $B$ do not both occur equals $A$ failing to occur OR $B$ failing to occur.
+
+---
 
 ### 3. Set Distributive & Partition Rules
 
@@ -60,6 +64,8 @@
 * **Finite Additivity:** $P(A_1 \cup A_2 \cup \dots \cup A_n) = P(A_1) + P(A_2) + \dots + P(A_n)$
   * *Verbal Description:* For a finite collection of mutually exclusive events, the probability of their union equals the sum of their individual probabilities.
 
+---
+
 ### 2. Derived Properties & Basic Rules
 
 * **Empty Set Rule:** $P(\varnothing) = 0$
@@ -79,6 +85,8 @@
 
 * **Law of Total Probability for Sets (Partitioning):** $P(A) = P(A \cap B) + P(A \cap B^c)$
   * *Verbal Description:* The total probability of event $A$ is the sum of the probability of $A$ happening with $B$ and $A$ happening without $B$.
+
+---
 
 ### 3. Additive Laws & Set Difference Shortcuts
 
@@ -100,6 +108,8 @@
   $$P(A \Delta B) = P(A) + P(B) - 2P(A \cap B)$$
   * *Verbal Description:* The probability that *exactly one* of event $A$ or event $B$ occurs, excluding the outcome where both occur.
 
+---
+
 ### 4. Intersection Bounds & Bonferroni's Inequality
 
 * **Intersection Bounds (Two Events):**
@@ -107,7 +117,6 @@
     $$P(A \cap B) \ge P(A) + P(B) - 1$$
     *(Note: $P(A \cap B) = P(A) + P(B) - P(A \cup B)$ when $P(A \cup B) = 1$)*
     * *Verbal Description:* The smallest possible intersection probability occurs when the union spans the entire sample space ($P(A \cup B) = 1$).
-
   * **Maximum Possible Intersection:**
     $$P(A \cap B) \le \min(P(A), P(B))$$
     * *Verbal Description:* The maximum intersection probability is restricted by the smaller of the two individual event probabilities.
@@ -116,11 +125,9 @@
   * **Two-Event Case:**
     $$P(A \cap B) \ge P(A) + P(B) - 1 \quad \text{or} \quad P(A \cap B) \ge 1 - P(A^c) - P(B^c)$$
     * *Verbal Description:* The simultaneous occurrence of two events is at least 1 minus the sum of their individual complements' probabilities.
-
   * **Three-Event Case ($n = 3$):**
     $$P(A \cap B \cap C) \ge P(A) + P(B) + P(C) - 2$$
     * *Verbal Description:* Lower bound for the simultaneous occurrence of three events, obtained by subtracting 2 from the sum of their probabilities.
-
   * **General $n$-Event Form:**
     $$P(A_1 \cap A_2 \cap \dots \cap A_n) \ge \sum_{i=1}^{n} P(A_i) - (n - 1)$$
     $$P(A_1 \cap A_2 \cap \dots \cap A_n) \ge 1 - \sum_{i=1}^{n} P(A_i^c)$$
@@ -140,6 +147,8 @@
   $$\text{Total Options} = n_1 + n_2 + \dots + n_m$$
   * *Verbal Description:* If a single selection can be made from one of $m$ mutually exclusive sets, the total number of options is the sum of sizes of each set.
 
+---
+
 ### 2. Permutations (Order Matters)
 
 * **Basic Permutation Formula:**
@@ -151,6 +160,8 @@
   $$\text{Distinct Arrangements} = \frac{n!}{n_1! \, n_2! \, \dots \, n_k!}$$
   *(where $n_1 + n_2 + \dots + n_k = n$)*
   * *Verbal Description:* The number of distinct linear arrangements of $n$ total items when the items belong to $k$ groups of identical/indistinguishable objects.
+
+---
 
 ### 3. Combinations (Order Does NOT Matter)
 
@@ -165,6 +176,8 @@
     * *Verbal Description:* There is exactly 1 way to select zero items (empty set) or all $n$ items.
   * **Pascal's Identity:** $\binom{n}{r} = \binom{n-1}{r-1} + \binom{n-1}{r}$
     * *Verbal Description:* The number of ways to choose $r$ items from $n$ equals combinations including a specific item plus combinations excluding that item.
+
+---
 
 ### 4. Classical Probability with Combinatorics
 
@@ -187,6 +200,8 @@
   *(where $m$ is the number of unrestricted items and $r$ is the number of restricted items)*
   * *Verbal Description:* First arrange the $m$ unrestricted items in $m!$ ways, then choose $r$ gaps out of $m+1$ available spaces for the restricted items, and multiply by $r!$ internal permutations.
 
+---
+
 ### 2. Distribution Problems ("Stars and Bars")
 
 * **Non-Negative Integer Distribution (Bins CAN be empty, $x_i \ge 0$):**
@@ -196,6 +211,8 @@
 * **Positive Integer Distribution (Bins CANNOT be empty, $x_i \ge 1$):**
   $$\text{Ways} = \binom{n - 1}{k - 1}$$
   * *Verbal Description:* The number of distinct ways to distribute $n$ identical items into $k$ distinct bins when every bin must receive at least 1 item.
+
+---
 
 ### 3. Constrained Committee Selection
 
@@ -207,6 +224,8 @@
   $$\text{Valid Selections} = \binom{N - a - b}{r - a}$$
   *(where $a$ individuals must be included and $b$ individuals must be excluded)*
   * *Verbal Description:* Reduce the required committee size by $a$ (since $a$ slots are pre-filled) and reduce the candidate pool by removing both the $a$ included and $b$ excluded individuals.
+
+---
 
 ### 4. Grid / Lattice Paths
 
@@ -236,6 +255,8 @@
   $$P(A_1 \cup A_2 \cup \dots \cup A_n) = \sum_{i=1}^{n} P(A_i)$$
   * *Verbal Description:* For any finite collection of mutually exclusive events, the probability that at least one occurs is the sum of all individual event probabilities.
 
+---
+
 ### 2. General Addition Rule (Two Events)
 
 * **Two-Event General Addition Formula:**
@@ -245,6 +266,8 @@
 * **Rearranged Form for Intersection:**
   $$P(A \cap B) = P(A) + P(B) - P(A \cup B)$$
   * *Verbal Description:* The probability of two events occurring together equals the sum of their individual probabilities minus the probability of their union.
+
+---
 
 ### 3. Inclusion-Exclusion Principle (Three Events)
 
@@ -274,6 +297,8 @@
   * For non-trivial events ($P(A) > 0, P(B) > 0$), if $A$ and $B$ are mutually exclusive ($P(A \cap B) = 0$), then they **CANNOT** be independent because $P(A \cap B) \neq P(A)P(B)$.
   * *Verbal Description:* Mutually exclusive events are strongly dependent because knowing one event occurred guarantees the other did not occur.
 
+---
+
 ### 2. Independence of Complements
 
 * **Complement Independence Rules:**
@@ -288,10 +313,11 @@
   * **Two Events:**
     $$P(A \cup B) = 1 - P(A^c \cap B^c) = 1 - P(A^c)P(B^c)$$
     * *Verbal Description:* The probability that at least one of two independent events occurs equals 1 minus the product of their complement probabilities.
-
   * **General $n$ Independent Events:**
     $$P(\text{At least one event occurs}) = 1 - \prod_{i=1}^{n} P(A_i^c) = 1 - \prod_{i=1}^{n} \left(1 - P(A_i)\right)$$
     * *Verbal Description:* The probability that at least one of $n$ independent events occurs equals 1 minus the product of all individual non-occurrence probabilities.
+
+---
 
 ### 3. Extension to $n \ge 3$ Events: Pairwise vs. Mutual Independence
 
@@ -324,11 +350,15 @@
   $$P(A \cap B) = P(A) \cdot P(B)$$
   * *Verbal Description:* When events are independent, $P(B \mid A) = P(B)$, simplifying the conditional multiplication rule to a standard product of individual probabilities.
 
+---
+
 ### 2. The Chain Rule for $n$ Sequential Events
 
 * **General Chain Rule ($n$ Events):**
   $$P(A_1 \cap A_2 \cap \dots \cap A_n) = P(A_1) \cdot P(A_2 \mid A_1) \cdot P(A_3 \mid A_1 \cap A_2) \cdots P(A_n \mid A_1 \cap A_2 \cap \dots \cap A_{n-1})$$
   * *Verbal Description:* The joint probability that a sequence of $n$ dependent events all occur equals the probability of the first event, multiplied by the conditional probability of each subsequent event given that all preceding events in the sequence have occurred.
+
+---
 
 ### 3. Sampling With vs. Without Replacement
 
@@ -339,6 +369,8 @@
 * **Sampling Without Replacement (Dependent Draws / Sequential Chain Rule):**
   $$P(A_1 \cap A_2 \cap \dots \cap A_k) = \frac{n(A)}{N} \times \frac{n(A) - 1}{N - 1} \times \dots \times \frac{n(A) - k + 1}{N - k + 1}$$
   * *Verbal Description:* Draws are dependent because items are removed without replacement, decreasing both the target item count and total pool size by 1 after each successful draw.
+
+---
 
 ### 4. Multi-Step Probability Pathways (Law of Total Probability Decomposition)
 
@@ -364,6 +396,8 @@
   $$P(A \mid B) = \frac{N(A \cap B)}{N(B)}$$
   * *Verbal Description:* In a sample space of equally likely outcomes, the conditional probability of $A$ given $B$ is the number of outcomes in the intersection of $A$ and $B$ divided by the total count of outcomes in the restricted sample space $B$.
 
+---
+
 ### 2. Rearranged Forms & Key Conditional Properties
 
 * **Joint Probability via Conditional Probability:**
@@ -386,3 +420,66 @@
 * **General Addition Rule Under Conditioning:**
   $$P(A_1 \cup A_2 \mid B) = P(A_1 \mid B) + P(A_2 \mid B) - P(A_1 \cap A_2 \mid B)$$
   * *Verbal Description:* All standard probability rules and axioms, including the general addition rule, hold within any restricted sample space $B$.
+
+---
+
+## Day 9: Law of Total Probability & Partitioning Sample Spaces
+
+### 1. Sample Space Partitioning
+
+* **Partition Conditions:** A collection of events $\{B_1, B_2, \dots, B_k\}$ forms a partition of sample space $S$ if:
+  1. **Mutually Exclusive (Disjoint):** $B_i \cap B_j = \varnothing$ for all $i \neq j$ (i.e., $P(B_i \cap B_j) = 0$).
+  2. **Collectively Exhaustive:** $\bigcup_{i=1}^{k} B_i = B_1 \cup B_2 \cup \dots \cup B_k = S$.
+  * *Verbal Description:* A partition divides the entire sample space into non-overlapping pieces that together cover all possible outcomes.
+
+* **Sum of Partition Probabilities:**
+  $$\sum_{i=1}^{k} P(B_i) = P(B_1) + P(B_2) + \dots + P(B_k) = 1$$
+  * *Verbal Description:* The probabilities of all mutually exclusive events in a partition must sum to exactly 1.
+
+---
+
+### 2. The Law of Total Probability (LTP)
+
+* **Joint Summation Form:**
+  $$P(A) = \sum_{i=1}^{k} P(A \cap B_i)$$
+  * *Verbal Description:* The unconditional probability of event $A$ is obtained by summing the joint probabilities of $A$ occurring with each partition piece $B_i$.
+
+* **Standard Conditional Form (LTP Formula):**
+  $$P(A) = \sum_{i=1}^{k} P(B_i)P(A \mid B_i) = P(B_1)P(A \mid B_1) + P(B_2)P(A \mid B_2) + \dots + P(B_k)P(A \mid B_k)$$
+  * *Verbal Description:* The total unconditional probability of event $A$ is the weighted average of the conditional probabilities of $A$ across each risk category or partition piece, weighted by the prior probability of each piece.
+
+* **Two-Event Special Case (Single Event $B$ and Complement $B^c$):**
+  $$P(A) = P(B)P(A \mid B) + P(B^c)P(A \mid B^c)$$
+  * *Verbal Description:* When partitioning by a single event $B$ and its complement $B^c$, the total probability of $A$ is $P(A \mid B)P(B)$ plus $P(A \mid B^c)P(B^c)$.
+
+---
+
+## Day 10: Bayes' Theorem & Probability Tree Diagrams
+
+### 1. Bayes' Theorem
+
+* **General Partition Form:**
+  $$P(B_j \mid A) = \frac{P(B_j \cap A)}{P(A)} = \frac{P(B_j)P(A \mid B_j)}{\sum_{i=1}^{k} P(B_i)P(A \mid B_i)}$$
+  * *Verbal Description:* The posterior probability of partition slice $B_j$ given that event $A$ has been observed equals the joint probability of $B_j$ and $A$ divided by the total unconditional probability of event $A$ (derived via LTP).
+
+* **Two-Event Special Case:**
+  $$P(B \mid A) = \frac{P(B)P(A \mid B)}{P(B)P(A \mid B) + P(B^c)P(A \mid B^c)}$$
+  * *Verbal Description:* Updating the probability of hypothesis $B$ after observing outcome $A$ when the sample space is partitioned into $B$ and $B^c$.
+
+* **Posterior Probabilities Axiom:**
+  $$\sum_{i=1}^{k} P(B_i \mid A) = 1$$
+  * *Verbal Description:* The sum of updated (posterior) probabilities across all partition pieces conditioned on event $A$ must equal 1.
+
+---
+
+### 2. Probability Tree Diagram & Pathway Calculations
+
+* **Key Terminology:**
+  * **Prior Probability ($P(B_j)$):** Initial probability of event $B_j$ before observing evidence.
+  * **Likelihood ($P(A \mid B_j)$):** Conditional probability of observing evidence $A$ given event $B_j$.
+  * **Path Product / Joint Probability ($P(B_j \cap A)$):** Multiplying along a tree branch: $P(B_j \cap A) = P(B_j)P(A \mid B_j)$.
+  * **Posterior Probability ($P(B_j \mid A)$):** Updated probability of $B_j$ after observing evidence $A$.
+
+* **Bayes' Calculation Formula for Tree Diagrams:**
+  $$P(B_j \mid A) = \frac{\text{Path Product of Interest}}{\text{Sum of All Path Products for Event } A}$$
+  * *Verbal Description:* In a probability tree diagram, the posterior probability equals the joint path product of the specific scenario divided by the sum of path products for all branches leading to observed event $A$.
